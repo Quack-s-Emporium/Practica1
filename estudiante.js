@@ -10,8 +10,19 @@ export default class Estudiante extends Persona{
 
     }
 
+    getNumeroCuenta(){
+        return this._numeroCuenta = numeroCuenta;
+    }
+
     getPerfil(){
         return `${this._numeroCuenta} ${this._nombre.getNombreCompleto()}`
+    }
+
+    esIgualA(estudiante){
+        if(estudiante.getNumeroCuenta() === this._numeroCuenta){
+            return true;
+        }
+            return false;
     }
 
     print(){

@@ -18,7 +18,7 @@ export default class Grupo{
         
         let result = null;
         this._estudiantes.forEach(student => {
-            if (student === estudiante){
+            if (student.esIgualA(estudiante)){
                 result = student;
             }
         })

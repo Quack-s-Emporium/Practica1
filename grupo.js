@@ -25,6 +25,46 @@ export default class Grupo{
         return result;
     }
 
+    _encontrarEstudianteV2(estudiante){
+        let result = this._estudiantes.find(student => student.esIgualA(estudiante))
+        return result;
+    }
+
+    _encontrarIndiceEstudiante(estudiante){
+        let indice = -1
+        this._estudiantes.forEach((student,i) => {
+            if (student.esIgualA(estudiante)){
+                indice = i; 
+            }
+        });
+        return indice;
+    }
+
+    _encontrarIndiceEstudianteV2(estudiante) {
+        let indice = this._estudiantes.findIndex(student => student.esIgualA(estudiante))
+        return indice;
+    }
+
+    _eliminarEstudiante(estudiante){
+        let indice = this._encontrarEstudiante(estudiante)
+
+        if (indice < 0){
+            return false;
+        }
+            this._estudiantes.splice(indice,1)
+            return true;
+    }
+
+    actualizar(estudiante,nuevoEstudiante){
+        let indice = this._encontrarIndiceEstudiante(estudiante);
+
+        if (indice < 0){
+            return false;
+        } 
+        this._estudiantes.splice(indice,1,nuevoEstudiante)
+        return true;
+    }
+
     listarEstudiantes(){
         this._estudiantes.forEach((estudiante, i) =>{
             console.log(`${i+1} ${estudiante.getPerfil()}`)

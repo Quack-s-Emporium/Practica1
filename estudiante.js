@@ -1,7 +1,7 @@
 import Persona from "./persona.js"
 export default class Estudiante extends Persona{
 
-    constructor(nombre, fechaNac, genero, numeroCuenta,correo,escuela,){
+    constructor({nombre, fechaNac, genero, numeroCuenta,correo,escuela}){
 
         super(nombre,fechaNac,genero);
         this._numeroCuenta = numeroCuenta;
@@ -11,7 +11,7 @@ export default class Estudiante extends Persona{
     }
 
     getNumeroCuenta(){
-        return this._numeroCuenta = numeroCuenta;
+        return this._numeroCuenta
     }
 
     getPerfil(){

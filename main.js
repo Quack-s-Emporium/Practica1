@@ -65,14 +65,24 @@ class Main{
     }
 
     pruebaGrupo(){
-        let estudihambre2 = new Estudiante(
-            "Masculino",
-            new FechaNacimiento(10,2,1900),
-            new Nombre("Antonio", "Chavez", "Cisneros"),
-            20145677, 
-            "jchavez@ucol.mx", 
-            "Facultad de Telematica")
+        let datosEstudiante2 = {
+            nombre:new Nombre("Antonio", "Chavez", "Cisneros"),
+            fechaNacimiento: new FechaNacimiento(10,2,1900),
+            genero: "Masculino",
+            numeroCuenta: 20145677,
+            correo: "jchavez@ucol.mx",
+            escuela: "Facultad de Telematica"
+        }
+
+        let estudihambre2 = new Estudiante(datosEstudiante2)
         let estudihambre3 = new Estudiante(
+            "Masculino",
+            new FechaNacimiento(3,4,1999),
+            new Nombre("Juan", "Fernandez", "Cisneros"),
+            34535229, 
+            "jreas@ucol.mx", 
+            "Facultad de Telematica")
+        let estudihambre4 = new Estudiante(
             "Masculino",
             new FechaNacimiento(4,2,1990),
             new Nombre("Roberto", "Fernandez", "Cisneros"),
@@ -83,10 +93,28 @@ class Main{
         console.log("<-----Grupos----->")
         console.log(grupoA.registrar(estudihambre2))
         console.log(grupoA.registrar(estudihambre3))
+        console.log(grupoA.registrar(estudihambre4))
         grupoA.listarEstudiantes()
         console.log("Listado de estudiantes")
         console.log(grupoA._encontrarEstudiante(estudihambre2))
         console.log(grupoA._encontrarEstudiante(estudihambre3))
+        console.log(grupoA._encontrarEstudiante(estudihambre4))
+            //Indice v1
+        console.log(grupoA._encontrarIndiceEstudiante(estudihambre2))
+        console.log(grupoA._encontrarIndiceEstudiante(estudihambre3))
+        console.log(grupoA._encontrarIndiceEstudiante(estudihambre4))
+            //Indice v2
+        console.log(grupoA._encontrarIndiceEstudianteV2(estudihambre2))
+        console.log(grupoA._encontrarIndiceEstudianteV2(estudihambre3))
+        console.log(grupoA._encontrarIndiceEstudianteV2(estudihambre4))
+            //Eliminar Estudiante
+        console.log(grupoA._eliminarEstudiante(estudihambre2))
+        console.log(grupoA._eliminarEstudiante(estudihambre3))
+        console.log(grupoA._eliminarEstudiante(estudihambre4))
+        grupoA.listarEstudiantes()
+
+        console.log(grupoA.actualizar(estudihambre2,estudihambre4))
+        grupoA.listarEstudiantes()
     }
 
 }
